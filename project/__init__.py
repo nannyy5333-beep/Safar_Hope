@@ -1,1 +1,0 @@
-"""Telegram Shop Bot Package"""
