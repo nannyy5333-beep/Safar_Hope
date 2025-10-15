@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Профиль клиента</h1>
+<div class="card mt-3">
+    <div class="card-body">
+        <p><strong>Имя:</strong> {{ customer.first_name }} {{ customer.last_name }}</p>
+        <p><strong>Username:</strong> @{{ customer.username }}</p>
+        <p><strong>Телефон:</strong> {{ customer.phone }}</p>
+        <p><strong>Telegram ID:</strong> {{ customer.telegram_id }}</p>
+        <p><strong>Дата регистрации:</strong> {{ customer.created_at }}</p>
+        <h5 class="mt-3">Заказы:</h5>
+        <ul>
+        {% for order in orders %}
+        <li>Заказ #{{ order.order_number }} - ${{ order.final_amount }} - {{ order.status }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+<a href="{{ url_for('customers') }}" class="btn btn-secondary mt-3">Назад</a>
+{% endblock %}
