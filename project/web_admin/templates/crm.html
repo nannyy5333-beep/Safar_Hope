@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>CRM</h1>
-<div class="row mt-4">
-    <div class="col-md-4"><div class="card"><div class="card-body"><h5>Новые клиенты</h5><p>{{ segments.new_customers|length }}</p></div></div></div>
-    <div class="col-md-4"><div class="card"><div class="card-body"><h5>Активные</h5><p>{{ segments.active_customers|length }}</p></div></div></div>
-    <div class="col-md-4"><div class="card"><div class="card-body"><h5>Группы риска</h5><p>{{ segments.at_risk|length }}</p></div></div></div>
-</div>
-{% endblock %}
