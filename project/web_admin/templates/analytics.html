@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Аналитика</h1>
+<div class="row mt-4 g-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5>Статистика продаж</h5>
+                <p class="mb-2">Всего заказов: <strong>{{ orders_count }}</strong></p>
+                <p class="mb-0">Выручка: <strong style="color: var(--primary-green);">${{ revenue }}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5>Популярные товары</h5>
+                <ul class="list-unstyled">
+                {% for p in top_products %}
+                <li class="mb-2">{{ p.name }} <strong>({{ p.sales }})</strong></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
